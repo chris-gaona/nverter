@@ -2,6 +2,7 @@ import React from 'react';
 import {get} from 'axios';
 import './History.scss';
 import Cookie from 'js-cookie';
+import {Link} from 'react-router-dom';
 
 export default class History extends React.Component{
 
@@ -39,6 +40,11 @@ export default class History extends React.Component{
                                download>
                                 Download
                             </a>
+                            <Link
+                                to={`/view/${encode}`}
+                                className='view'>
+                                View
+                            </Link>
                         </div>
                     )
                 })}

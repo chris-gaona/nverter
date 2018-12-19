@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Uploader from "./Uploader";
 import Encoder from "./Encoder";
 import History from "./History";
+import View from "./View";
 import './App.scss';
 
 console.log(Cookie.set('_uid'));
@@ -57,6 +58,7 @@ class App extends Component {
                 )}/>
 
                 <Route exact path="/encodes" component={History}/>
+                <Route path="/view/:filename" component={View}/>
             </div>
         );
     }

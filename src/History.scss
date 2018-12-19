@@ -11,8 +11,12 @@
     padding: 10px;
     word-wrap: break-word;
 
-    .download{
+    .download, .view{
       float :right;
+    }
+
+    .view {
+      margin-right: 20px
     }
   }
   .message{

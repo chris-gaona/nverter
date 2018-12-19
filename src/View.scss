@@ -1,0 +1,13 @@
+@import "~video-react/styles/scss/video-react";
+
+.video-container {
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.video-react .video-react-time-control {
+  display: flex;
+  align-items: center;
+}
