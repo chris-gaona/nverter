@@ -115,15 +115,16 @@ io.on('connection', (socket) => {
             completed = false,
             file = data.file,
             user = data.user,
+            preset = data.preset,
             convert_ext = data.convert_ext,
             input = path.join(__dirname, '/uploads/', user, '/' + file),
-            encoded_file = file + '_to_.' + convert_ext,
+            encoded_file = file + '_' + preset + '_to_.' + convert_ext,
             output = path.join(__dirname, '/encoded/', user , '/', encoded_file);
 
         handbrake = hbjs.spawn({
             input: input,
-            output : output,
-            preset : 'Fast 480p30',
+            output: output,
+            preset,
             // 'Fast 1080p30'
             // 'Fast 720p30'
             // 'Fast 576p25'

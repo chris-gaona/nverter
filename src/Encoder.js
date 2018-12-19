@@ -16,7 +16,9 @@ export default class Encoder extends Component {
             convert_ext : props.convert_ext,
             progress : 0,
             eta : '',
+            preset: ''
         }
+        this.currentUpload = 'Fast 576p25'
     }
 
     componentDidMount(){
@@ -25,22 +27,37 @@ export default class Encoder extends Component {
         this.socket.emit('encode', {
             file : this.state.file,
             user : Cookie.get('_uid'),
-            convert_ext : this.state.convert_ext
+            convert_ext : this.state.convert_ext,
+            preset: this.currentUpload
         });
 
         this.socket.on('progress', function (data) {
             this.setState({
                 progress : data.percentage,
-                eta : data.eta
+                eta : data.eta,
+                preset: this.currentUpload
             });
         }.bind(this));
 
         this.socket.on('complete', function (data) {
             this.setState({
-                encoded_file : data.encoded_file
+                encoded_file : data.encoded_file,
             });
             toastr.success('Encoding complete');
+
+            if (this.currentUpload === 'Fast 1080p30') return
+
+            this.currentUpload = 'Fast 1080p30'
+
+            this.socket.emit('encode', {
+                file : this.state.file,
+                user : Cookie.get('_uid'),
+                convert_ext : this.state.convert_ext,
+                preset: this.currentUpload
+            });
+
         }.bind(this));
+
     }
 
     componentWillUnmount(){
@@ -52,6 +69,7 @@ export default class Encoder extends Component {
         let filename = this.state.file;
         return (
             <div className="encoder">
+                <h2>Using preset: { this.state.preset }</h2>
                 <h3>
                     {filename.substring(filename.indexOf('_') + 1)} <br/>
                     <small>

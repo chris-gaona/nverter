@@ -18,10 +18,10 @@ export default class extends Component {
         <Plyr
           type="video"
           title="View From A Blue Moon"
-          poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+          // poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
           sources={[
             {
-              src: `../encoded/${uid}/${this.props.match.params.filename}`,
+              src: `../encoded/${uid}/1545260402584_1080p.mov_Fast 576p25_to_.mp4`,
               type: 'video/mp4',
               size: '576',
             },
@@ -31,7 +31,7 @@ export default class extends Component {
             //   size: '720',
             // },
             {
-              src: `../encoded/${uid}/${this.props.match.params.filename}`,
+              src: `../encoded/${uid}/1545260402584_1080p.mov_Fast 1080p30_to_.mp4`,
               type: 'video/mp4',
               size: '1080',
             },
