@@ -123,7 +123,11 @@ io.on('connection', (socket) => {
         handbrake = hbjs.spawn({
             input: input,
             output : output,
-            preset : 'Universal'
+            preset : 'Fast 480p30',
+            // 'Fast 1080p30'
+            // 'Fast 720p30'
+            // 'Fast 576p25'
+            // 'Fast 480p30'
         })
         .on('progress', progress => {
             socket.emit('progress',{

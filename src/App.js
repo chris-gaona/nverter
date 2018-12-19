@@ -5,10 +5,10 @@ import Navbar from "./Navbar";
 import Uploader from "./Uploader";
 import Encoder from "./Encoder";
 import History from "./History";
-import View from "./View";
+import VideoPlayer from "./VideoPlayer";
 import './App.scss';
 
-console.log(Cookie.set('_uid'));
+console.log(Cookie.set('_uid', '_uid'));
 
 class App extends Component {
 
@@ -58,7 +58,7 @@ class App extends Component {
                 )}/>
 
                 <Route exact path="/encodes" component={History}/>
-                <Route path="/view/:filename" component={View}/>
+                <Route path="/video/:filename" component={VideoPlayer}/>
             </div>
         );
     }

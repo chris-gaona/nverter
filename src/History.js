@@ -41,8 +41,8 @@ export default class History extends React.Component{
                                 Download
                             </a>
                             <Link
-                                to={`/view/${encode}`}
-                                className='view'>
+                                to={`/video/${encode}`}
+                                className='video'>
                                 View
                             </Link>
                         </div>
