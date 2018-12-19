@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Player, BigPlayButton } from 'video-react'
 import Plyr from 'react-plyr'
 import './VideoPlayer.scss';
 import Cookie from 'js-cookie';
@@ -16,13 +15,6 @@ export default class extends Component {
 
     return (
       <div className="video-container">
-        {/* <Player
-          autoPlay
-          poster="/assets/poster.png"
-          src={`../encoded/${uid}/${this.props.match.params.filename}`}
-        >
-          <BigPlayButton position="center" />
-        </Player> */}
         <Plyr
           type="video"
           title="View From A Blue Moon"
